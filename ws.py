@@ -26,6 +26,7 @@ def on_message(ws, message):
             ethPriceDelta_real = ethPriceDelta - (btcPriceDelta * 1.192)
 
             if math.fabs(ethPriceDelta_real) > 0.01:
+                #if curTime - time.time() * 1000 < 3000:        #тут можно проверять временные задержки (данные с биржи не старее 3 секунд)
                 print('Цена ETH изменилась на 1%')
         # добавляю новые данные в priceLog
         priceLog.append(
